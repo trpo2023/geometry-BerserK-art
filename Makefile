@@ -1,4 +1,4 @@
 
-geometry : main.c
-	gcc -Wall -o geometry main.c
+geometry : geometry.c
+	gcc -Wall -o geometry geometry.c 
 
