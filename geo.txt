@@ -1,0 +1,9 @@
+8
+circle(-1.5 2.6, .4)
+circle( -1.5 2.56, 4
+circle(-1.5 4.t6, 4)
+cirtcle(-1.5 2.6, 43)
+CIrcle(-1.5, 2.6, 1)
+cIrcle(-1.5   2.6, 4)
+circle(,)
+circle(1 , )
