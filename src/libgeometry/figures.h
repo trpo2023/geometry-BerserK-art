@@ -1,15 +1,13 @@
 #pragma once
 
 typedef struct {
-	double x;
-	double y;
+    double x;
+    double y;
 } Point;
-typedef struct
-{
-	Point p;
-	double R;
+typedef struct {
+    Point p;
+    double R;
 } Circle;
-
 
 double perimetr(Circle* c);
 double area(Circle* c);
