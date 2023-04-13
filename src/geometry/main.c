@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
   	}
   	for(int i = 0; i<count_with_no_errors; i++)
   	{
+  	   printf("%d.",i);
   	   print_crc(masc[i]);
   	   printf("perimetr: %lf\n", perimetr(&masc[i]));
   	   printf("area: %lf\n", area(&masc[i]));
