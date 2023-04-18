@@ -3,7 +3,15 @@ CPPFLAGS = -MMD
 
 bin/geometry: obj/src/geometry/geometry.o obj/src/libgeometry/libgeometry.a
 	gcc $(CFLAGS) -o $@ $^ -lm
-
+	
+test: bin/test
+	
+bin/test: obj/src/test/test.o obj/src/libgeometry/libgeometry.a
+	gcc $(CFLAGS) -o $@ $^ -lm
+	
+obj/src/test/test.o: test/main.c
+	gcc -c $(CFLAGS) $(CPPFLAGS) -I src -o $@ $<
+	
 obj/src/geometry/geometry.o: src/geometry/main.c
 	gcc -c $(CFLAGS) $(CPPFLAGS) -I src -o $@ $<
 
