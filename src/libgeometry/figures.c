@@ -1,13 +1,17 @@
-#include "figures.h"
 #include <math.h>
+
+#include <libgeometry/figures.h>
+
 double perimetr(Circle* c)
 {
     return M_PI * 2 * c->R;
 }
+
 double area(Circle* c)
 {
     return M_PI * c->R * c->R;
 }
+
 int is_intersect(Circle* c1, Circle* c2)
 {
     double bet

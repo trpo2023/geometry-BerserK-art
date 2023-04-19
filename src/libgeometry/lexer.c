@@ -1,11 +1,14 @@
-#include "lexer.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include <libgeometry/lexer.h>
+
 #define SKIP                             \
     while (i < strlen(a) && a[i] == ' ') \
     i++
+    
 int is_circle(char a[], int comments)
 {
     char c[] = "circle(";

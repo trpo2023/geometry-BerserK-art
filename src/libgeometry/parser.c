@@ -1,8 +1,10 @@
-#include "parser.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include <libgeometry/parser.h>
+
 #define SKIP                             \
     while (i < strlen(a) && a[i] == ' ') \
     i++
