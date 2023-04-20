@@ -1,8 +1,11 @@
-#include "parser.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include <libgeometry/parser.h>
+#include <libgeometry/lexer.h>
+
 #define SKIP                             \
     while (i < strlen(a) && a[i] == ' ') \
     i++
@@ -17,9 +20,11 @@ Circle get_circle(char a[])
 {
     Point p1 = {0, 0};
     Circle circle = {p1, 0};
+    if(is_circle(a,0)==0)
+       return circle;
     int i = 7, k = 0, dot = 1;
     char fl1[255], fl2[255], fl3[255];
-
+   
     SKIP;
 
     if (a[i] == '-')

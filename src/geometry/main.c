@@ -1,9 +1,10 @@
 #include <ctype.h>
-#include <libgeometry/lexer.h>
-#include <libgeometry/parser.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include <libgeometry/lexer.h>
+#include <libgeometry/parser.h>
 
 int main(int argc, char* argv[])
 {
