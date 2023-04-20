@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <math.h>
+#include <stdlib.h>
 
 #include <ctest.h>
 
@@ -31,14 +31,14 @@ CTEST(perimetr, test4)
 {
     Point p1 = {10, 10};
     Circle c = {p1, 1};
-    ASSERT_DBL_NEAR(M_PI*2, perimetr(&c));
+    ASSERT_DBL_NEAR(M_PI * 2, perimetr(&c));
 }
 
 CTEST(perimetr, test5)
 {
     Point p1 = {10, 10};
     Circle c = {p1, 1.577};
-    ASSERT_DBL_NEAR(M_PI*2*1.577, perimetr(&c));
+    ASSERT_DBL_NEAR(M_PI * 2 * 1.577, perimetr(&c));
 }
 
 CTEST(area, zero_area)
@@ -47,7 +47,6 @@ CTEST(area, zero_area)
     Circle c = {p1, 0};
     ASSERT_DBL_NEAR(0.0, area(&c));
 }
-
 
 CTEST(area, area_test)
 {
@@ -60,7 +59,7 @@ CTEST(area, irrational_area)
 {
     Point p1 = {10, 10};
     Circle c = {p1, M_PI};
-    ASSERT_DBL_NEAR(M_PI*M_PI*M_PI, area(&c));
+    ASSERT_DBL_NEAR(M_PI * M_PI * M_PI, area(&c));
 }
 
 CTEST(intersect, same_circle)

@@ -8,7 +8,7 @@
 #define SKIP                             \
     while (i < strlen(a) && a[i] == ' ') \
     i++
-    
+
 int is_circle(char a[], int comments)
 {
     char c[] = "circle(";
@@ -22,9 +22,9 @@ int is_circle(char a[], int comments)
             return 0;
         }
     }
-    int i = 7, dot = 1, num=0;
+    int i = 7, dot = 1, num = 0;
     SKIP;
-    
+
     if (a[i] == '-')
         i++;
     while (i < strlen(a)) {
@@ -39,15 +39,15 @@ int is_circle(char a[], int comments)
                 return 0;
             }
             break;
-        } else 
-        {
+        } else {
             if (a[i] == '.')
-               dot = 0;
-            else num = 1;
+                dot = 0;
+            else
+                num = 1;
         }
         i++;
     }
-    
+
     dot = 1;
     num = 0;
     SKIP;
@@ -66,11 +66,11 @@ int is_circle(char a[], int comments)
                 return 0;
             }
             break;
-        } else
-        { 
-          if (a[i] == '.')
-               dot = 0;
-            else num = 1;
+        } else {
+            if (a[i] == '.')
+                dot = 0;
+            else
+                num = 1;
         }
         i++;
     }
@@ -98,11 +98,11 @@ int is_circle(char a[], int comments)
                 return 0;
             }
             break;
-        } else
-        {
-         if (a[i] == '.')
-               dot = 0;
-            else num = 1;
+        } else {
+            if (a[i] == '.')
+                dot = 0;
+            else
+                num = 1;
         }
         i++;
     }

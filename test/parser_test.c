@@ -28,7 +28,7 @@ CTEST(correct_circle, doubleparse_test)
     ASSERT_DBL_NEAR(15.8, c1.p.x);
     ASSERT_DBL_NEAR(14.9, c1.p.y);
     ASSERT_DBL_NEAR(13.3, c1.R);
-} 
+}
 
 CTEST(correct_circle, negativeparse_test)
 {
@@ -37,7 +37,7 @@ CTEST(correct_circle, negativeparse_test)
     ASSERT_DBL_NEAR(-15.8, c1.p.x);
     ASSERT_DBL_NEAR(-14.9, c1.p.y);
     ASSERT_DBL_NEAR(-13.3, c1.R);
-} 
+}
 
 CTEST(correct_circle, dotparse_test)
 {
@@ -55,7 +55,7 @@ CTEST(correct_circle, spase_test)
     ASSERT_DBL_NEAR(0.8, c1.p.x);
     ASSERT_DBL_NEAR(-0.9, c1.p.y);
     ASSERT_DBL_NEAR(13.3, c1.R);
-} 
+}
 
 CTEST(uncorrect_circle, triangle_test)
 {
