@@ -22,13 +22,14 @@ int is_circle(char a[], int comments)
             return 0;
         }
     }
-    int i = 7, dot = 1;
+    int i = 7, dot = 1, num=0;
     SKIP;
+    
     if (a[i] == '-')
         i++;
     while (i < strlen(a)) {
         if (!(isdigit(a[i]) || (dot && a[i] == '.'))) {
-            if (a[i] != ' ') {
+            if (!(a[i] == ' ' && num)) {
                 if (comments) {
                     printf("%s\n", a);
                     for (int j = 0; j < i; j++)
@@ -38,18 +39,24 @@ int is_circle(char a[], int comments)
                 return 0;
             }
             break;
-        } else if (a[i] == '.')
-            dot = 0;
+        } else 
+        {
+            if (a[i] == '.')
+               dot = 0;
+            else num = 1;
+        }
         i++;
     }
+    
     dot = 1;
+    num = 0;
     SKIP;
 
     if (a[i] == '-')
         i++;
     while (i < strlen(a)) {
         if (!(isdigit(a[i]) || (dot && a[i] == '.'))) {
-            if (a[i] != ' ' && a[i] != ',') {
+            if (!((a[i] == ' ' || a[i] == ',') && num)) {
                 if (comments) {
                     printf("%s\n", a);
                     for (int j = 0; j < i; j++)
@@ -59,11 +66,16 @@ int is_circle(char a[], int comments)
                 return 0;
             }
             break;
-        } else if (a[i] == '.')
-            dot = 0;
+        } else
+        { 
+          if (a[i] == '.')
+               dot = 0;
+            else num = 1;
+        }
         i++;
     }
     dot = 1;
+    num = 0;
     SKIP;
     if (a[i++] != ',') {
         if (comments) {
@@ -76,7 +88,7 @@ int is_circle(char a[], int comments)
         i++;
     while (i < strlen(a)) {
         if (!(isdigit(a[i]) || (dot && a[i] == '.'))) {
-            if (a[i] != ' ' && a[i] != ')') {
+            if (!((a[i] == ' ' || a[i] == ')') && num)) {
                 if (comments) {
                     printf("%s\n", a);
                     for (int j = 0; j < i; j++)
@@ -86,8 +98,12 @@ int is_circle(char a[], int comments)
                 return 0;
             }
             break;
-        } else if (a[i] == '.')
-            dot = 0;
+        } else
+        {
+         if (a[i] == '.')
+               dot = 0;
+            else num = 1;
+        }
         i++;
     }
     SKIP;
