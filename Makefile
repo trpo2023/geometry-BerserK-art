@@ -4,12 +4,24 @@ CPPFLAGS = -MMD
 bin/geometry: obj/src/geometry/geometry.o obj/src/libgeometry/libgeometry.a
 	gcc $(CFLAGS) -o $@ $^ -lm
 	
-test: bin/test
+test: bin/parser_test bin/lexer_test bin/calc_test
 	
-bin/test: obj/src/test/test.o obj/src/test/main.o
+bin/parser_test: obj/src/test/parser_test.o obj/src/test/main.o obj/src/libgeometry/libgeometry.a
 	gcc $(CFLAGS) -o $@ $^ -lm
+	
+bin/lexer_test: obj/src/test/lexer_test.o obj/src/test/main.o obj/src/libgeometry/libgeometry.a
+	gcc $(CFLAGS) -o $@ $^ -lm
+	
+bin/calc_test: obj/src/test/calc_test.o obj/src/test/main.o obj/src/libgeometry/libgeometry.a
+	gcc $(CFLAGS) -o $@ $^ -lm
+	
+obj/src/test/parser_test.o: test/parser_test.c 
+	gcc -c $(CFLAGS) $(CPPFLAGS) -I src -I thirdparty -o $@ $<
 
-obj/src/test/test.o: test/parser_test.c 
+obj/src/test/lexer_test.o: test/lexer_test.c 
+	gcc -c $(CFLAGS) $(CPPFLAGS) -I src -I thirdparty -o $@ $<
+
+obj/src/test/calc_test.o: test/calc_test.c 
 	gcc -c $(CFLAGS) $(CPPFLAGS) -I src -I thirdparty -o $@ $<
 		
 obj/src/test/main.o: test/main.c
@@ -31,7 +43,7 @@ obj/src/libgeometry/figures.o: src/libgeometry/figures.c
 	gcc -c $(CFLAGS) $(CPPFLAGS) -I src -o $@ $< -lm
 
 clean:
-	rm obj/*/*.[oad] bin/*
+	rm obj/*/*/*.[oad] bin/*
 
 .PHONY: clean test
 	
