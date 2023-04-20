@@ -47,4 +47,4 @@ clean:
 
 .PHONY: clean test
 	
--include obj/src/geometry/geometry.d obj/src/libgeometry/lexer.d obj/src/libgeometry/parser.d
+-include obj/src/geometry/geometry.d obj/src/libgeometry/lexer.d obj/src/libgeometry/parser.d obj/src/test/parser_test.d obj/src/test/lexer_test.d obj/src/test/main.d obj/src/test/calc_test.d
