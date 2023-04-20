@@ -123,4 +123,3 @@ CTEST(uncorrect_circle, free_mistakes_test)
     char test4[] = "circle(10 - 10 , 10)";
     ASSERT_EQUAL(0, is_circle(test4, 0));
 }
-
