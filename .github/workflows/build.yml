@@ -19,10 +19,10 @@ jobs:
         run: make test
         
       - name: lexer_test
-        run: ./bin/lexer_test.c 
+        run: ./bin/lexer_test 
         
       - name: parser_test
-        run: ./bin/parser_test.c
+        run: ./bin/parser_test
   
       - name: calc_test
-        run: ./bin/calc_test.c             
+        run: ./bin/calc_test            
