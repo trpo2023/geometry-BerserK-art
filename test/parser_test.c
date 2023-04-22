@@ -32,11 +32,11 @@ CTEST(correct_circle, doubleparse_test)
 
 CTEST(correct_circle, negativeparse_test)
 {
-    char a[] = "circle(-15.8 -14.9, -13.3)";
+    char a[] = "circle(-15.8 -14.9, 13.3)";
     Circle c1 = get_circle(a);
     ASSERT_DBL_NEAR(-15.8, c1.p.x);
     ASSERT_DBL_NEAR(-14.9, c1.p.y);
-    ASSERT_DBL_NEAR(-13.3, c1.R);
+    ASSERT_DBL_NEAR(13.3, c1.R);
 }
 
 CTEST(correct_circle, dotparse_test)

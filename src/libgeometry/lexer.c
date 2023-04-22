@@ -84,8 +84,7 @@ int is_circle(char a[], int comments)
         return 0;
     }
     SKIP;
-    if (a[i] == '-')
-        i++;
+
     while (i < strlen(a)) {
         if (!(isdigit(a[i]) || (dot && a[i] == '.'))) {
             if (!((a[i] == ' ' || a[i] == ')') && num)) {

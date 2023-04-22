@@ -57,7 +57,7 @@ CTEST(area, area_test)
 
 CTEST(area, irrational_area)
 {
-    Point p1 = {10, 10};
+    Point p1 = {-10, -10};
     Circle c = {p1, M_PI};
     ASSERT_DBL_NEAR(M_PI * M_PI * M_PI, area(&c));
 }

@@ -36,7 +36,7 @@ CTEST(correct_circle, double_test)
     ASSERT_EQUAL(1, is_circle(test2, 0));
     char test3[] = "circle(10. 10., 10)";
     ASSERT_EQUAL(1, is_circle(test3, 0));
-    char test4[] = "circle(-10 -10, -10.122)";
+    char test4[] = "circle(-10 -10, 10.122)";
     ASSERT_EQUAL(1, is_circle(test4, 0));
 }
 
@@ -121,5 +121,17 @@ CTEST(uncorrect_circle, free_mistakes_test)
     char test3[] = "circle(10 10. 10)";
     ASSERT_EQUAL(0, is_circle(test3, 0));
     char test4[] = "circle(10 - 10 , 10)";
+    ASSERT_EQUAL(0, is_circle(test4, 0));
+}
+
+CTEST(uncorrect_circle, negative_radius_test)
+{
+    char test1[] = "circle(10 10, -10)";
+    ASSERT_EQUAL(0, is_circle(test1, 0));
+    char test2[] = "circle(10 10, -10.9)";
+    ASSERT_EQUAL(0, is_circle(test2, 0));
+    char test3[] = "circle(-10 -10, 10)";
+    ASSERT_EQUAL(1, is_circle(test3, 0));
+    char test4[] = "circle(10 10 , 10-)";
     ASSERT_EQUAL(0, is_circle(test4, 0));
 }
